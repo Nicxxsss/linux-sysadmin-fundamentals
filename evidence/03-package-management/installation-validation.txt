@@ -1,0 +1,39 @@
+$ command -v tree
+/usr/bin/tree
+
+$ tree --version
+tree v2.2.1 © 1996 - 2024 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro
+
+$ apt-cache policy tree
+tree:
+  Installed: 2.2.1-1
+  Candidate: 2.2.1-1
+  Version table:
+ *** 2.2.1-1 500
+        500 http://deb.debian.org/debian trixie/main amd64 Packages
+        100 /var/lib/dpkg/status
+
+$ dpkg -S /usr/bin/tree
+tree: /usr/bin/tree
+
+$ tree -L 2 /srv/security-reports
+/srv/security-reports  [error opening dir]
+
+0 directories, 1 file
+
+$ tree -L 2 /etc/ssh
+/etc/ssh
+├── moduli
+├── ssh_config
+├── ssh_config.d
+│   └── 20-systemd-ssh-proxy.conf -> /usr/lib/systemd/ssh_config.d/20-systemd-ssh-proxy.conf
+├── sshd_config
+├── sshd_config.d
+├── ssh_host_ecdsa_key
+├── ssh_host_ecdsa_key.pub
+├── ssh_host_ed25519_key
+├── ssh_host_ed25519_key.pub
+├── ssh_host_rsa_key
+└── ssh_host_rsa_key.pub
+
+3 directories, 10 files

@@ -1,0 +1,32 @@
+$ apt-cache search ^tree$
+tree - displays an indented directory tree, in color
+
+$ apt-cache policy tree
+tree:
+  Installed: (none)
+  Candidate: 2.2.1-1
+  Version table:
+     2.2.1-1 500
+        500 http://deb.debian.org/debian trixie/main amd64 Packages
+
+$ apt-cache show tree
+Package: tree
+Version: 2.2.1-1
+Installed-Size: 129
+Maintainer: Florian Ernst <florian@debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.38)
+Description-en: displays an indented directory tree, in color
+ Tree is a recursive directory listing command that produces a depth indented
+ listing of files, which is colorized ala dircolors if the LS_COLORS environment
+ variable is set and output is to tty.
+Description-md5: 9b53b68087a50d4cd859ac0117aecc08
+Homepage: http://oldmanprogrammer.net/source.php?dir=projects/tree
+Tag: implemented-in::c, interface::commandline, role::program,
+ scope::utility, use::browsing, works-with::file
+Section: utils
+Priority: optional
+Filename: pool/main/t/tree/tree_2.2.1-1_amd64.deb
+Size: 59392
+MD5sum: 4b402685144f0c911899c95206f9ffd2
+SHA256: 123f5e15790fee551c52f56bb930e3eadd77f74af0819c8bec243e26521e98f5

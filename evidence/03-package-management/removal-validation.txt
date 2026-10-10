@@ -1,0 +1,22 @@
+$ command -v tree
+tree is no longer installed
+
+$ apt-cache policy tree
+tree:
+  Installed: (none)
+  Candidate: 2.2.1-1
+  Version table:
+     2.2.1-1 500
+        500 http://deb.debian.org/debian trixie/main amd64 Packages
+
+$ Package history
+Commandline: apt install tree
+Requested-By: user1 (1000)
+Install: tree:amd64 (2.2.1-1)
+End-Date: 2026-10-10  18:13:32
+
+Start-Date: 2026-10-10  18:15:47
+Commandline: apt remove tree
+Requested-By: user1 (1000)
+Remove: tree:amd64 (2.2.1-1)
+End-Date: 2026-10-10  18:15:48
