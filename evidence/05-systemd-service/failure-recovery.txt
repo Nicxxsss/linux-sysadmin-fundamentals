@@ -1,0 +1,43 @@
+$ journalctl failure and recovery timeline
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: Stopping lab-heartbeat.service - Sysadmin lab heartbeat service...
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Deactivated successfully.
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: Stopped lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:37:57 debian-sysadmin-lab (-missing)[2754]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:37:57 debian-sysadmin-lab (-missing)[2754]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:37:57 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:02 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Scheduled restart job, restart counter is at 1.
+Oct 10 18:38:02 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:38:02 debian-sysadmin-lab (-missing)[2757]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:38:02 debian-sysadmin-lab (-missing)[2757]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:38:02 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:38:02 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:07 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Scheduled restart job, restart counter is at 2.
+Oct 10 18:38:07 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:38:07 debian-sysadmin-lab (-missing)[2760]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:38:07 debian-sysadmin-lab (-missing)[2760]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:38:07 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:38:07 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:13 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Scheduled restart job, restart counter is at 3.
+Oct 10 18:38:13 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:38:13 debian-sysadmin-lab (-missing)[2766]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:38:13 debian-sysadmin-lab (-missing)[2766]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:38:13 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:38:13 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:18 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Scheduled restart job, restart counter is at 4.
+Oct 10 18:38:18 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:38:18 debian-sysadmin-lab (-missing)[2768]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:38:18 debian-sysadmin-lab (-missing)[2768]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:38:18 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:38:18 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:23 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Scheduled restart job, restart counter is at 5.
+Oct 10 18:38:23 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:38:23 debian-sysadmin-lab (-missing)[2770]: lab-heartbeat.service: Unable to locate executable '/usr/local/bin/lab-heartbeat-missing': No such file or directory
+Oct 10 18:38:23 debian-sysadmin-lab (-missing)[2770]: lab-heartbeat.service: Failed at step EXEC spawning /usr/local/bin/lab-heartbeat-missing: No such file or directory
+Oct 10 18:38:23 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Main process exited, code=exited, status=203/EXEC
+Oct 10 18:38:23 debian-sysadmin-lab systemd[1]: lab-heartbeat.service: Failed with result 'exit-code'.
+Oct 10 18:38:26 debian-sysadmin-lab systemd[1]: Stopped lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:39:29 debian-sysadmin-lab systemd[1]: Started lab-heartbeat.service - Sysadmin lab heartbeat service.
+Oct 10 18:39:29 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-10T18:39:29-03:00
+Oct 10 18:39:59 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-10T18:39:59-03:00

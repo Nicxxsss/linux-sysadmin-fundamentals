@@ -1,0 +1,13 @@
+[Unit]
+Description=Sysadmin lab heartbeat service
+
+[Service]
+Type=simple
+User=labsvc
+Group=labsvc
+ExecStart=/usr/local/bin/lab-heartbeat
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

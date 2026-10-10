@@ -1,0 +1,37 @@
+$ id labsvc
+uid=988(labsvc) gid=988(labsvc) groups=988(labsvc)
+
+$ systemctl cat lab-heartbeat.service
+# /etc/systemd/system/lab-heartbeat.service
+[Unit]
+Description=Sysadmin lab heartbeat service
+
+[Service]
+Type=simple
+User=labsvc
+Group=labsvc
+ExecStart=/usr/local/bin/lab-heartbeat
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
+$ systemctl is-active lab-heartbeat.service
+active
+
+$ systemctl is-enabled lab-heartbeat.service
+enabled
+
+$ systemctl status lab-heartbeat.service
+● lab-heartbeat.service - Sysadmin lab heartbeat service
+     Loaded: loaded (/etc/systemd/system/lab-heartbeat.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-10-10 18:39:29 -03; 49s ago
+ Invocation: 1b31dff9448f4d059f423c5c9e8c75fc
+   Main PID: 2823 (bash)
+      Tasks: 2 (limit: 2301)
+     Memory: 580K (peak: 1.8M)
+        CPU: 22ms
+     CGroup: /system.slice/lab-heartbeat.service
+             ├─2823 bash /usr/local/bin/lab-heartbeat
+             └─2833 sleep 30
