@@ -1,0 +1,17 @@
+$ id contractor
+uid=1004(contractor) gid=1004(contractor) groups=1004(contractor),100(users)
+
+$ Create a file as analyst
+Exit status: 0
+
+$ Modify the file as developer
+Exit status: 0
+
+$ Attempt access as contractor
+touch: cannot touch '/srv/security-reports/unauthorized-test.txt': Permission denied
+Exit status: 1
+
+$ Read the authorized file as developer
+Created by analyst
+Modified by developer
+Exit status: 0

@@ -1,0 +1,16 @@
+$ ls -ld /srv/security-reports
+drwxrws---+ 2 root security 4096 Oct  9 22:20 /srv/security-reports
+
+$ getfacl -p /srv/security-reports
+# file: /srv/security-reports
+# owner: root
+# group: security
+# flags: -s-
+user::rwx
+group::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:mask::rwx
+default:other::---
+

@@ -1,0 +1,2 @@
+$ getent group security
+security:x:1003:analyst,developer
