@@ -1,0 +1,30 @@
+$ Start an idle process
+[1] 2480
+PID: 2480
+    PID    PPID USER     STAT %CPU %MEM     ELAPSED CMD
+   2480    2460 user1    S     0.0  0.1       00:00 sleep 300
+
+$ Terminate the idle process with SIGTERM
+[1]+  Terminated              sleep 300
+Exit status: 143
+    PID TTY          TIME CMD
+Process is no longer running
+
+$ Start a controlled CPU-intensive process
+[1] 2483
+    PID    PPID USER     STAT %CPU %MEM     ELAPSED CMD
+   2483    2460 user1    S     0.0  0.0       00:01 timeout 20s yes
+   2485    2483 user1    R    99.0  0.0       00:01 yes
+
+$ Find the highest CPU usage
+    PID    PPID USER     STAT %CPU %MEM     ELAPSED CMD
+   2485    2483 user1    R    99.0  0.0       00:01 yes
+   2459    2451 user1    S     0.2  0.3       04:57 sshd-session: user1@pts/0
+   2381       2 root     I     0.0  0.0       09:24 [kworker/0:0-events]
+   2393       2 root     I     0.0  0.0       08:21 [kworker/1:2-events_power_efficient]
+
+$ Stop the controlled test
+[1]+  Terminated              timeout 20s yes > /dev/null
+Exit status: 143
+    PID TTY          TIME CMD
+Processes are no longer running
