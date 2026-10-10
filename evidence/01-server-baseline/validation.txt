@@ -1,0 +1,35 @@
+$ ip -brief address
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp1s0           UP             192.168.122.177/24 fe80::102d:ab43:dde4:9745/64 
+
+$ ip route
+default via 192.168.122.1 dev enp1s0 proto dhcp src 192.168.122.177 metric 1002 
+192.168.122.0/24 dev enp1s0 proto dhcp scope link src 192.168.122.177 metric 1002 
+
+$ ping -c 3 1.1.1.1
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=54 time=10.5 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=54 time=10.5 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=54 time=11.4 ms
+
+--- 1.1.1.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 10.500/10.825/11.440/0.434 ms
+
+$ ping -c 3 debian.org
+PING debian.org (151.101.194.132) 56(84) bytes of data.
+64 bytes from 151.101.194.132: icmp_seq=1 ttl=59 time=5.01 ms
+64 bytes from 151.101.194.132: icmp_seq=2 ttl=59 time=98.0 ms
+64 bytes from 151.101.194.132: icmp_seq=3 ttl=59 time=7.76 ms
+
+--- debian.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 5.009/36.924/98.005/43.205 ms
+
+$ systemctl is-active ssh
+active
+
+$ systemctl --failed --no-pager
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.

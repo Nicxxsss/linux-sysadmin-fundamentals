@@ -1,0 +1,15 @@
+$ nproc
+2
+
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       268Mi       1.6Gi       4.5Mi       244Mi       1.7Gi
+Swap:          1.1Gi          0B       1.1Gi
+
+$ lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sr0     11:0    1 1024M  1 rom  
+vda    254:0    0   20G  0 disk 
+├─vda1 254:1    0 18.9G  0 part /
+├─vda2 254:2    0    1K  0 part 
+└─vda5 254:5    0  1.1G  0 part [SWAP]
