@@ -63,7 +63,7 @@ sudo tar \
   --extract \
   --gzip \
   --file /var/backups/sysadmin-lab/lab-heartbeat.tar.gz \
-  --directory /tmp/lab-restore.XXXXXX
+  --directory "$restore_dir"
 ```
 
 The restored files were compared with the originals using `cmp`. Both comparisons matched.
