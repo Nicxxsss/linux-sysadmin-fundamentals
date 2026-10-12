@@ -1,0 +1,51 @@
+$ nftables package
+install ok installed 1.1.3-1
+
+$ Validate persistent ruleset
+Exit status: 0
+
+$ nftables service state
+enabled
+active
+
+$ Active ruleset
+table inet lab_filter { # handle 7
+	chain input { # handle 1
+		type filter hook input priority filter; policy drop;
+		iifname "lo" accept # handle 4
+		ct state invalid drop # handle 5
+		ct state established,related accept # handle 6
+		tcp dport 22 ct state new accept # handle 7
+		ip protocol icmp accept # handle 8
+		ip6 nexthdr ipv6-icmp accept # handle 9
+		udp sport 67 udp dport 68 accept # handle 10
+		udp sport 547 udp dport 546 accept # handle 11
+		counter packets 0 bytes 0 drop # handle 12
+	}
+
+	chain forward { # handle 2
+		type filter hook forward priority filter; policy drop;
+	}
+
+	chain output { # handle 3
+		type filter hook output priority filter; policy accept;
+	}
+}
+
+$ Listening sockets after cleanup
+Netid State  Recv-Q Send-Q                      Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0                         192.168.122.177:68        0.0.0.0:*    users:(("dhcpcd",pid=5661,fd=3))
+udp   UNCONN 0      0      [fe80::102d:ab43:dde4:9745]%enp1s0:546          [::]:*    users:(("dhcpcd",pid=746,fd=3))
+tcp   LISTEN 0      128                               0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=731,fd=6))
+tcp   LISTEN 0      128                                  [::]:22           [::]:*    users:(("sshd",pid=731,fd=7))
+
+$ Outbound connectivity
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=54 time=23.4 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=54 time=68.1 ms
+
+--- 1.1.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 23.426/45.738/68.050/22.312 ms
+151.101.66.132  STREAM debian.org
+151.101.66.132  DGRAM

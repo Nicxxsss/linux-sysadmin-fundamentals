@@ -1,0 +1,16 @@
+$ Test port 8080 before temporary allow rule
+curl: (28) Connection timed out after 3002 milliseconds
+Exit status: 28
+
+$ Test port 8080 after temporary allow rule
+firewall validation
+Exit status: 0
+
+$ Test port 8080 after removing temporary rule
+curl: (28) Connection timed out after 3002 milliseconds
+Exit status: 28
+
+$ Confirm SSH remains allowed
+SSH allowed through nftables
+debian-sysadmin-lab
+Exit status: 0
