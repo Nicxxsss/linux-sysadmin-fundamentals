@@ -1,0 +1,5 @@
+$ systemctl is-active lab-heartbeat.service
+inactive
+
+$ systemctl is-enabled lab-heartbeat.service
+disabled

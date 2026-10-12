@@ -1,0 +1,6 @@
+$ journalctl -u lab-heartbeat.service -n 5
+Oct 12 12:06:56 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-12T12:06:56-03:00
+Oct 12 12:07:26 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-12T12:07:26-03:00
+Oct 12 12:07:56 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-12T12:07:56-03:00
+Oct 12 12:08:26 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-12T12:08:26-03:00
+Oct 12 12:08:56 debian-sysadmin-lab lab-heartbeat[2823]: heartbeat timestamp=2026-10-12T12:08:56-03:00

@@ -1,0 +1,8 @@
+$ journalctl -u ssh.service during the test
+Oct 12 12:05:42 debian-sysadmin-lab sshd-session[5683]: Invalid user invaliduser from 192.168.122.1 port 48806
+Oct 12 12:05:44 debian-sysadmin-lab sshd-session[5683]: pam_unix(sshd:auth): check pass; user unknown
+Oct 12 12:05:44 debian-sysadmin-lab sshd-session[5683]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.122.1
+Oct 12 12:05:46 debian-sysadmin-lab sshd-session[5683]: Failed password for invalid user invaliduser from 192.168.122.1 port 48806 ssh2
+Oct 12 12:05:46 debian-sysadmin-lab sshd-session[5683]: Connection closed by invalid user invaliduser 192.168.122.1 port 48806 [preauth]
+Oct 12 12:05:56 debian-sysadmin-lab sshd-session[5685]: Accepted password for user1 from 192.168.122.1 port 44054 ssh2
+Oct 12 12:05:56 debian-sysadmin-lab sshd-session[5685]: pam_unix(sshd:session): session opened for user user1(uid=1000) by user1(uid=0)
