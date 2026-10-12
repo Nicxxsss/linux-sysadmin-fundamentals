@@ -1,0 +1,37 @@
+$ lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS
+NAME    SIZE FSTYPE MOUNTPOINTS
+sr0    1024M
+vda      20G
+├─vda1 18.9G ext4   /
+├─vda2    1K
+└─vda5  1.1G swap   [SWAP]
+
+$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  959M     0  959M   0% /dev
+tmpfs          tmpfs     198M  620K  197M   1% /run
+/dev/vda1      ext4       19G  1.2G   17G   7% /
+tmpfs          tmpfs     987M     0  987M   0% /dev/shm
+tmpfs          tmpfs     5.0M     0  5.0M   0% /run/lock
+tmpfs          tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs          tmpfs     987M   12K  987M   1% /tmp
+tmpfs          tmpfs     1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs          tmpfs     198M  8.0K  198M   1% /run/user/1000
+
+$ df -i
+Filesystem      Inodes IUsed   IFree IUse% Mounted on
+udev            245501   397  245104    1% /dev
+tmpfs           252617   584  252033    1% /run
+/dev/vda1      1240320 39851 1200469    4% /
+tmpfs           252617     1  252616    1% /dev/shm
+tmpfs           252617     2  252615    1% /run/lock
+tmpfs             1024     1    1023    1% /run/credentials/systemd-journald.service
+tmpfs          1048576    12 1048564    1% /tmp
+tmpfs             1024     1    1023    1% /run/credentials/getty@tty1.service
+tmpfs            50523    22   50501    1% /run/user/1000
+
+$ journalctl --disk-usage
+Hint: You are currently not seeing messages from other users and the system.
+      Users in groups 'adm', 'systemd-journal' can see all messages.
+      Pass -q to turn off this notice.
+Archived and active journals take up 8M in the file system.

@@ -1,0 +1,10 @@
+$ du -ah /var/tmp/disk-lab | sort -h
+4.0K	/var/tmp/disk-lab/README.txt
+24M	/var/tmp/disk-lab/cache/archive.cache
+25M	/var/tmp/disk-lab/cache
+64M	/var/tmp/disk-lab/application.log
+89M	/var/tmp/disk-lab
+
+$ find files larger than 20 MiB
+67108864 bytes /var/tmp/disk-lab/application.log
+25165824 bytes /var/tmp/disk-lab/cache/archive.cache

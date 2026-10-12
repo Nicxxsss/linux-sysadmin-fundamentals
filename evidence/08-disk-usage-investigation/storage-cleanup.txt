@@ -1,0 +1,9 @@
+$ rm controlled test files
+Exit status: 0
+
+$ Confirm test directory was removed
+Controlled test directory no longer exists
+
+$ df -hT /var/tmp
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/vda1      ext4   19G  1.2G   17G   7% /
