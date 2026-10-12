@@ -1,0 +1,11 @@
+$ Public-key fingerprint
+256 SHA256:NDCbTxVAj7Fv2cfKS7Bx+w0mTJkKWuZqE2EjZJ4HDJM user1@debian-sysadmin-lab (ED25519)
+
+$ Test public-key authentication
+Public-key authentication successful
+uid=1000(user1) gid=1000(user1) groups=1000(user1),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),101(netdev)
+Exit status: 0
+
+$ Attempt password-only authentication
+user1@192.168.122.177: Permission denied (publickey).
+Exit status: 255

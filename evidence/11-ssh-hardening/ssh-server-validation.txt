@@ -1,0 +1,31 @@
+$ Validate SSH configuration syntax
+Exit status: 0
+
+$ Effective hardened configuration
+maxauthtries 3
+permitrootlogin no
+pubkeyauthentication yes
+passwordauthentication no
+kbdinteractiveauthentication no
+x11forwarding no
+allowusers user1
+
+$ SSH service state
+active
+
+$ Recent SSH journal
+Oct 12 14:26:19 debian-sysadmin-lab sshd-session[6799]: pam_unix(sshd:session): session opened for user user1(uid=1000) by user1(uid=0)
+Oct 12 14:26:19 debian-sysadmin-lab sshd-session[6799]: pam_unix(sshd:session): session closed for user user1
+Oct 12 14:26:37 debian-sysadmin-lab sshd-session[6810]: Accepted publickey for user1 from 192.168.122.1 port 47516 ssh2: ED25519 SHA256:NDCbTxVAj7Fv2cfKS7Bx+w0mTJkKWuZqE2EjZJ4HDJM
+Oct 12 14:26:37 debian-sysadmin-lab sshd-session[6810]: pam_unix(sshd:session): session opened for user user1(uid=1000) by user1(uid=0)
+Oct 12 14:28:00 debian-sysadmin-lab systemd[1]: Reloading ssh.service - OpenBSD Secure Shell server...
+Oct 12 14:28:00 debian-sysadmin-lab systemd[1]: Reloaded ssh.service - OpenBSD Secure Shell server.
+Oct 12 14:28:00 debian-sysadmin-lab sshd[731]: Received SIGHUP; restarting.
+Oct 12 14:28:00 debian-sysadmin-lab sshd[731]: Server listening on 0.0.0.0 port 22.
+Oct 12 14:28:00 debian-sysadmin-lab sshd[731]: Server listening on :: port 22.
+Oct 12 14:28:08 debian-sysadmin-lab sshd-session[6869]: Accepted publickey for user1 from 192.168.122.1 port 42674 ssh2: ED25519 SHA256:NDCbTxVAj7Fv2cfKS7Bx+w0mTJkKWuZqE2EjZJ4HDJM
+Oct 12 14:28:08 debian-sysadmin-lab sshd-session[6869]: pam_unix(sshd:session): session opened for user user1(uid=1000) by user1(uid=0)
+Oct 12 14:28:08 debian-sysadmin-lab sshd-session[6869]: pam_unix(sshd:session): session closed for user user1
+Oct 12 14:29:08 debian-sysadmin-lab sshd-session[6882]: Accepted publickey for user1 from 192.168.122.1 port 34080 ssh2: ED25519 SHA256:NDCbTxVAj7Fv2cfKS7Bx+w0mTJkKWuZqE2EjZJ4HDJM
+Oct 12 14:29:08 debian-sysadmin-lab sshd-session[6882]: pam_unix(sshd:session): session opened for user user1(uid=1000) by user1(uid=0)
+Oct 12 14:29:08 debian-sysadmin-lab sshd-session[6882]: pam_unix(sshd:session): session closed for user user1

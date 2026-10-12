@@ -1,0 +1,7 @@
+$ Effective SSH configuration before hardening
+maxauthtries 6
+permitrootlogin without-password
+pubkeyauthentication yes
+passwordauthentication yes
+kbdinteractiveauthentication no
+x11forwarding yes
