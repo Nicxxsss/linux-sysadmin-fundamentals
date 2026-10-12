@@ -1,0 +1,29 @@
+$ Validate script syntax
+Exit status: 0
+
+$ Run health check manually
+health-check root_usage=7% failed_units=0 ssh=active load="0.00 0.00 0.00"
+
+$ Timer state
+enabled
+active
+
+$ Timer schedule
+NEXT                        LEFT LAST PASSED UNIT                   ACTIVATES
+Mon 2026-10-12 14:30:00 -03 7min -         - lab-health-check.timer lab-health-check.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.
+
+$ Service execution properties
+Type=oneshot
+Result=success
+ExecMainStatus=0
+User=labsvc
+Group=labsvc
+
+$ Recent service journal
+Oct 12 14:21:12 debian-sysadmin-lab systemd[1]: Starting lab-health-check.service - Collect basic system health information...
+Oct 12 14:21:12 debian-sysadmin-lab lab-health-check[6674]: health-check root_usage=7% failed_units=0 ssh=active load="0.00 0.00 0.00"
+Oct 12 14:21:12 debian-sysadmin-lab systemd[1]: lab-health-check.service: Deactivated successfully.
+Oct 12 14:21:12 debian-sysadmin-lab systemd[1]: Finished lab-health-check.service - Collect basic system health information.

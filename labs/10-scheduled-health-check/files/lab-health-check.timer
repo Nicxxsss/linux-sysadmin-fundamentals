@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the lab health check every 15 minutes
+
+[Timer]
+OnCalendar=*:0/15
+Persistent=true
+AccuracySec=1s
+Unit=lab-health-check.service
+
+[Install]
+WantedBy=timers.target

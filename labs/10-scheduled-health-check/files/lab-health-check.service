@@ -1,0 +1,13 @@
+[Unit]
+Description=Collect basic system health information
+After=local-fs.target
+
+[Service]
+Type=oneshot
+User=labsvc
+Group=labsvc
+ExecStart=/usr/local/bin/lab-health-check
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

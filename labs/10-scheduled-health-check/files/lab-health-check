@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+root_usage=$(df --output=pcent / | awk 'NR == 2 {
+    gsub(/%/, "", $1)
+    print $1
+}')
+
+failed_units=$(systemctl --failed --no-legend --plain | grep -c . || true)
+ssh_status=$(systemctl is-active ssh || true)
+load_average=$(cut -d ' ' -f 1-3 /proc/loadavg)
+
+printf 'health-check root_usage=%s%% failed_units=%s ssh=%s load="%s"\n' \
+    "$root_usage" \
+    "$failed_units" \
+    "$ssh_status" \
+    "$load_average"
+
+if (( root_usage >= 80 )); then
+    printf 'warning root filesystem usage is above threshold\n'
+fi
