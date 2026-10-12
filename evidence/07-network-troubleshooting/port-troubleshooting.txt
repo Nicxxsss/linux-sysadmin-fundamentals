@@ -1,0 +1,26 @@
+$ Start service on loopback
+[1] 6159
+LISTEN 0      5          127.0.0.1:8080      0.0.0.0:*    users:(("python3",pid=6159,fd=3))
+
+$ Test incorrect port 8000
+curl: (7) Failed to connect to 127.0.0.1 port 8000 after 0 ms: Could not connect to server
+Exit status: 7
+
+$ Test correct loopback address and port
+network troubleshooting lab
+Exit status: 0
+
+$ Test VM interface while bound to loopback
+curl: (7) Failed to connect to 192.168.122.177 port 8080 after 0 ms: Could not connect to server
+Exit status: 7
+
+$ Restart service on all IPv4 interfaces
+[1] 6168
+LISTEN 0      5            0.0.0.0:8080      0.0.0.0:*    users:(("python3",pid=6168,fd=3))
+
+$ Test VM interface after changing the bind address
+network troubleshooting lab
+Exit status: 0
+
+$ Confirm port 8080 is no longer listening
+No listener on port 8080
