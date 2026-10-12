@@ -1,0 +1,15 @@
+$ Source file permissions
+755 root:root /usr/local/bin/lab-heartbeat
+644 root:root /etc/systemd/system/lab-heartbeat.service
+
+$ Backup files
+total 8.0K
+-rw-r--r-- 1 root root 409 Oct 12 14:12 lab-heartbeat.tar.gz
+-rw-r--r-- 1 root root 113 Oct 12 14:12 lab-heartbeat.tar.gz.sha256
+
+$ Verify archive checksum
+/var/backups/sysadmin-lab/lab-heartbeat.tar.gz: OK
+
+$ List archive contents
+-rwxr-xr-x root/root       121 2026-10-10 18:33 usr/local/bin/lab-heartbeat
+-rw-r--r-- root/root       208 2026-10-10 18:39 etc/systemd/system/lab-heartbeat.service

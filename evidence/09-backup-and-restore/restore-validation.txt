@@ -1,0 +1,15 @@
+$ Temporary restore location
+/tmp/lab-restore.6ytCao
+
+$ Compare restored script with original
+Script contents match
+
+$ Compare restored service unit with original
+Service unit contents match
+
+$ Restored file permissions
+755 root:root /tmp/lab-restore.6ytCao/usr/local/bin/lab-heartbeat
+644 root:root /tmp/lab-restore.6ytCao/etc/systemd/system/lab-heartbeat.service
+
+$ Remove temporary restore directory
+Temporary restore directory removed
