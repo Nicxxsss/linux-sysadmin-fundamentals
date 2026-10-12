@@ -1,0 +1,40 @@
+$ Boot time
+2026-10-12 14:45:35
+
+$ Active services after reboot
+ssh: active
+nftables: active
+lab-health-check.timer: active
+
+$ Enabled services after reboot
+ssh: enabled
+nftables: enabled
+lab-health-check.timer: enabled
+
+$ Scheduled health check
+NEXT                         LEFT LAST                        PASSED UNIT                   ACTIVATES
+Mon 2026-10-12 15:00:00 -03 13min Mon 2026-10-12 14:45:00 -03      - lab-health-check.timer lab-health-check.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.
+
+$ Persistent firewall input chain
+table inet lab_filter {
+	chain input { # handle 1
+		type filter hook input priority filter; policy drop;
+		iifname "lo" accept # handle 4
+		ct state invalid drop # handle 5
+		ct state established,related accept # handle 6
+		tcp dport 22 ct state new accept # handle 7
+		ip protocol icmp accept # handle 8
+		ip6 nexthdr ipv6-icmp accept # handle 9
+		udp sport 67 udp dport 68 accept # handle 10
+		udp sport 547 udp dport 546 accept # handle 11
+		counter packets 0 bytes 0 drop # handle 12
+	}
+}
+
+$ Failed systemd units
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
