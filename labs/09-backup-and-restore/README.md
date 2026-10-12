@@ -57,6 +57,8 @@ A checksum can detect changes or corruption, but it does not prove that the file
 I extracted the archive into a temporary directory instead of overwriting the live service files:
 
 ```bash
+restore_dir=$(sudo mktemp -d /tmp/lab-restore.XXXXXX)
+
 sudo tar \
   --extract \
   --gzip \

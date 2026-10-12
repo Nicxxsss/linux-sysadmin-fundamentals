@@ -68,7 +68,7 @@ A new SSH connection continued to succeed through the permanent TCP port 22 rule
 
 ## Final state
 
-The temporary HTTP server and its allow rule were removed. The remaining listening network service was SSH.
+The temporary HTTP server and its allow rule were removed. The only remaining TCP listener was SSH; the DHCP client UDP sockets remained active.
 
 The persistent ruleset passed syntax validation, the nftables service was enabled and active, DNS resolution continued to work, and the VM retained outbound network connectivity.
 
